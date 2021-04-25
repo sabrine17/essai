@@ -1,0 +1,36 @@
+// Center block
+@mixin center-block {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+// Column width with margin
+@mixin column-width($numberColumns: 3) {
+	width: map-get($columns, $numberColumns) - ( ( $columns__margin * ( $numberColumns - 1 ) ) / $numberColumns );
+}
+
+
+
+
+
+// format tablette
+@mixin tablet{
+	@media (min-width: 600px),( max-width: 1280px){
+		@content;
+	}
+}
+
+//format mobile
+@mixin mobile{
+	@media (min-width: 100px),( max-width: 600px){
+		@content;
+	}
+}
+
+// format desktop
+@mixin desktop{
+	@media(min-width: 1280px){
+		@content;
+	}
+}
